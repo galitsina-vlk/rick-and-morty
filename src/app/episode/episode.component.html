@@ -11,9 +11,7 @@
     <p class="paragraph">
       <span class="bold_paragraph">Air Date: </span>{{ episode.air_date }}
     </p>
-    <p>Characters:</p>
-    <!-- <ul>
-      <li *ngFor="let character of episode.characters">{{ character }}</li>
-    </ul> -->
+    <a class="link" [routerLink]="['/episode-details', episode.id]">More about this episode</a>
+  
   </div>
 </div>

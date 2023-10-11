@@ -8,15 +8,16 @@
 
 .button {
     width: 130px;
-    height: 30px;
-    background-color: #0fd850;
-    border: #f9f047 2px solid;
+    height: 40px;
+    background-color: #f9f047 ;
+    border: #0fd850 2px solid;
     border-radius: 20px;
     font-family: 'JetBrains Mono', sans-serif; 
     cursor: pointer;
 }
 .button:hover {
-    opacity: .8;
+    background-color: #0fd850;
+    border:  #f9f047 2px solid;
 }
 
 .card_container {

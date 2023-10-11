@@ -1,6 +1,7 @@
 {
   "name": "rick-and-morty",
   "version": "0.0.0",
+  "home": "https://galitsina-vlk.github.io/rick-and-morty/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
