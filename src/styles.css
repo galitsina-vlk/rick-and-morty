@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'JetBrains Mono', sans-serif; 
+    background-image: linear-gradient(to right, #0f0c29, #320941, #24243e);
+    color: white;
+  }

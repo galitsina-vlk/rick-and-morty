@@ -1,0 +1,61 @@
+
+.rick-and-morty-container {
+    margin: 20px 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.character {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    animation-duration: 4s; /* Adjust the duration as needed */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.rick {
+    left: -200px; /* Start off-screen to the left */
+    animation-name: rickAnimation;
+}
+
+.morty {
+    right: -200px; /* Start off-screen to the right */
+    animation-name: mortyAnimation;
+}
+
+@keyframes rickAnimation {
+    0% {
+        transform: translateX(-200px); /* Move in from the left */
+    }
+    50% {
+        transform: translateY(50px); /* Bounce up a little */
+    }
+    100% {
+        transform: translateX(100%); /* Move out to the right */
+    }
+}
+
+@keyframes mortyAnimation {
+    0% {
+        transform: translateX(100%); /* Move in from the right */
+    }
+    50% {
+        transform: translateY(50px); /* Bounce up a little */
+    }
+    100% {
+        transform: translateX(-200px); /* Move out to the left */
+    }
+}
+
+.paragraph {
+    margin: 0 auto;
+    padding: 10px 0;
+    box-sizing: border-box;
+    width: 720px;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+}

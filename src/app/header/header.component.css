@@ -1,0 +1,36 @@
+.header {
+    margin: 0 auto;
+    width: 1120px;  
+  }
+  
+  .navigation {
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+    font-family: 'Permanent Marker', cursive;
+  }
+
+  .link_wrapper {
+    width: 200px;
+    background-image: url(../../assets/images/portal.png);
+    opacity: 0.9;
+    background-size: 200px 50px; 
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+  }
+  
+  .link_wrapper:hover {
+    opacity: .8;
+  }
+  .link { 
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font-size: 30px;
+    line-height: 1.25;
+    color: #570039;
+    text-transform: uppercase;
+  }

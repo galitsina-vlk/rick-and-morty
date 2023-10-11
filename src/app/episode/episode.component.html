@@ -1,0 +1,19 @@
+<div class="button_container">
+  <button class="button" type="button" (click)="goToPrevious()">Previous page</button>
+  <button class="button" type="button" (click)="goToNext()">Next page</button>
+</div>
+<div class="card_container">
+  <div class="card" *ngFor="let episode of episodes">
+    <h2 class="title">{{ episode.name }}</h2>
+    <p class="paragraph">
+        <span class="bold_paragraph">Episode: </span>{{ episode.episode }}
+    </p>
+    <p class="paragraph">
+      <span class="bold_paragraph">Air Date: </span>{{ episode.air_date }}
+    </p>
+    <p>Characters:</p>
+    <!-- <ul>
+      <li *ngFor="let character of episode.characters">{{ character }}</li>
+    </ul> -->
+  </div>
+</div>
