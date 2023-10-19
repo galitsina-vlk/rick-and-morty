@@ -11,12 +11,14 @@ import { ILocation } from '../../types/types';
 export class LocationComponent {
   locations: ILocation[] = [];
   page = 1;
+  totalPages: number | null = null; 
 
   constructor(private appService: AppService) {}
 
   loadLocation() {
     this.appService.getLocation(this.page).subscribe((data) => {
       this.locations = data.results;
+      this.totalPages = data.info.pages;
     });
   }
 

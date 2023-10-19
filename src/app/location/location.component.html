@@ -1,6 +1,6 @@
 <div class="button_container">
-  <button class="button" type="button" (click)="goToPrevious()">Previous page</button>
-  <button class="button" type="button" (click)="goToNext()">Next page</button>
+  <button class="button" type="button" (click)="goToPrevious()" *ngIf="page > 1">Previous page</button>
+  <button class="button" type="button" (click)="goToNext()" *ngIf="page < totalPages!">Next page</button>
 </div>
 <div class="card_container">
   <div class="card" *ngFor="let location of locations">

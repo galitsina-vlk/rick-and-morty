@@ -9,6 +9,7 @@ import { CharactersComponent } from './characters/characters.component';
 import { LocationComponent } from './location/location.component';
 import { EpisodeComponent } from './episode/episode.component';
 import { HomeComponent } from './home/home.component';
+import { EpisodeDetailsComponent } from './episode-details/episode-details.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
     CharactersComponent,
     LocationComponent,
     EpisodeComponent,
-    HomeComponent
+    HomeComponent,
+    EpisodeDetailsComponent
   ],
   imports: [
     BrowserModule,

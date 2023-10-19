@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { ICharacterData, IEpisodeData, ILocationData } from '../../types/types'; 
+import { Observable, catchError, of } from 'rxjs';
+import { ICharacterData, IEpisode, IEpisodeData, ILocationData } from '../../types/types'; 
 @Injectable({
   providedIn: 'root',
 })
@@ -27,4 +27,17 @@ export class AppService {
   getCharacterDetails(characterUrl: string): Observable<any> {
     return this.http.get<any>(characterUrl);
   }
+
+  getEpisodeDetailsById(id: number): Observable<IEpisode | null> {
+    return this.http.get<IEpisode>(`${this.apiUrl}/episode/${id}`)
+      .pipe(
+        catchError((error) => {
+          console.error(`Error fetching episode ${id}:`, error);
+          return of(null);
+        })
+      );
+  }
+   
+  selectedEpisode: IEpisode | null = null; 
+
 }

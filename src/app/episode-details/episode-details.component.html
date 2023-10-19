@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>{{ episode?.name }}</h2>
+    <p class="paragraph">
+        <span class="bold_paragraph">Episode: </span>{{ episode?.episode }}
+    </p>
+    <p class="paragraph">
+        <span class="bold_paragraph">Air Date: </span>{{ episode?.air_date }}
+      </p>
+    <ul>
+        <li *ngFor="let character of characters">{{ character?.name }}</li>
+    </ul>
+  </div>
+  
