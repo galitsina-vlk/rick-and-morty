@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppService } from '../app-service/app-service.component';
-import { IEpisode } from '../../types/types';
+import { IEpisode, ICharacter } from '../../types/types';
 
 @Component({
   selector: 'app-episode-details',
@@ -10,7 +10,7 @@ import { IEpisode } from '../../types/types';
 })
 export class EpisodeDetailsComponent implements OnInit {
   episode!: IEpisode;
-  characters: string[] = [];
+  characters: ICharacter[] = [];
 
   constructor(private route: ActivatedRoute, private appService: AppService) {}
 
@@ -25,15 +25,25 @@ export class EpisodeDetailsComponent implements OnInit {
     this.appService.getEpisodeDetailsById(episodeId).subscribe((data) => {
       if (data) {
         this.episode = data;
-        this.characters = data.characters;
-        console.log(data);
+        // Fetch character details for each character URL
+        this.fetchCharacterDetails(this.episode.characters);
       } else {
         alert('Something went wrong');
       }
     });
-
-  
   }
 
-    
+  fetchCharacterDetails(characterUrls: string[]) {
+    characterUrls.forEach((characterUrl: string) => {
+      this.appService
+        .getCharacterDetails(characterUrl)
+        .subscribe((characterData) => {
+          if (characterData) {
+            this.characters.push(characterData);
+          } else {
+            alert('Something went wrong while fetching character data');
+          }
+        });
+    });
+  }
 }

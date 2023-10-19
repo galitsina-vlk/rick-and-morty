@@ -11,6 +11,7 @@ import { ICharacter } from '../../types/types';
 export class CharactersComponent {
   characters: ICharacter[] = [];
   page = 1;
+  totalPages: number | null = null; 
 
   constructor(private appService: AppService) {}
 
@@ -21,6 +22,7 @@ export class CharactersComponent {
   loadCharacters() {
     this.appService.getCharacters(this.page).subscribe((data) => {
       this.characters = data.results;
+      this.totalPages = data.info.pages;
     });
   }
   

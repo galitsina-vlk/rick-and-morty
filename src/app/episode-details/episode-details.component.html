@@ -1,15 +1,13 @@
-<p>episode-details works!</p>
-
-<div >
+<div class="container">
     <h2>{{ episode?.name }}</h2>
-    <p>
-      <strong>Episode:</strong> {{ episode?.episode }}
+    <p class="paragraph">
+        <span class="bold_paragraph">Episode: </span>{{ episode?.episode }}
     </p>
-    <p>
-      <strong>Air Date:</strong> {{ episode?.air_date }}
-    </p>
+    <p class="paragraph">
+        <span class="bold_paragraph">Air Date: </span>{{ episode?.air_date }}
+      </p>
     <ul>
-      <li *ngFor="let character of episode.characters">{{ character }}</li>
+        <li *ngFor="let character of characters">{{ character?.name }}</li>
     </ul>
   </div>
   

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class EpisodeComponent implements OnInit {
   episodes: IEpisode[] = [];
   page = 1;
+  totalPages: number | null = null; 
 
   constructor(private appService: AppService,
     private router: Router
@@ -20,6 +21,7 @@ export class EpisodeComponent implements OnInit {
   loadEpisodes() {
     this.appService.getEpisode(this.page).subscribe((data) => {
       this.episodes = data.results;
+      this.totalPages = data.info.pages;
     });
   }
 
@@ -37,8 +39,6 @@ export class EpisodeComponent implements OnInit {
     this.loadEpisodes();
   }
 
-
-
   viewEpisodeDetails(episode: IEpisode) {
     // Set the selected episode in the AppService
     this.appService.selectedEpisode = episode;
@@ -46,5 +46,4 @@ export class EpisodeComponent implements OnInit {
     // Navigate to the character details page
     this.router.navigate(['/character-details']);
   }
-
 }
